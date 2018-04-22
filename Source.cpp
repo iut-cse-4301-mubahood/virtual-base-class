@@ -24,6 +24,7 @@ public:
 class derived_1 : virtual public base {
 protected:
 	int d1;
+	int xxx;//If we create a variable with name xxx here in this derived class (derived_1)...
 public:
 	derived_1() :base(10), d1(0) {
 		cout << "in derived_1\n";
@@ -39,6 +40,7 @@ public:
 class derived_2 :virtual  public base {
 protected:
 	int d2;
+	int xxx;//And we create another variable with same name (xxx) in this class too (derived_2)...
 public:
 	derived_2() :base(20), d2(0) {
 		cout << "in derived_2\n";
@@ -55,6 +57,7 @@ class derived_3 : public derived_1, public derived_2 {
 protected:
 	int d3;
 public:
+	//it implies that our variables with same name (xxx) that we created in different classes have been inherited here
 	derived_3():base(100){
 		cout << "in derived_3\n";
 	}
@@ -68,6 +71,9 @@ public:
 
 int main() {
 	derived_3 ob3;
+	//Now, How shall we access those two different variables with same name (xxx) attarched to this object ob3????
+	//I shall be grateful for the example that responds me dear sir @iut-cse-4301
+	
 	//ob3.set_x(0);
 	ob3.set_d1(1);
 	ob3.set_d2(2);
